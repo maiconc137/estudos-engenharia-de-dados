@@ -37,10 +37,3 @@ Este repositório serve como material de consulta e inspiração para quem está
 ## Como Contribuir
 
 Se você deseja contribuir com este repositório, fique à vontade para abrir issues, enviar pull requests ou sugerir melhorias. Toda contribuição será muito bem-vinda!
-
-## Conecte-se Comigo
-
-- [LinkedIn](https://www.linkedin.com/in/maiconc137)
-- [GitHub](https://github.com/maiconc137)
-
-Acredito que o aprendizado é uma jornada contínua, e compartilhar conhecimento é uma das melhores formas de solidificar o que aprendemos. Obrigado por visitar este repositório, e espero que ele seja útil para você!
