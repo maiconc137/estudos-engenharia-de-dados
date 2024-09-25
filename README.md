@@ -20,6 +20,7 @@ A organização do repositório é feita por tecnologias, onde cada diretório c
   - `4-funcoes.ipynb`: Funções em Python.
   - `5-estrutura-de-dados.ipynb`: Listas, dicionários, tuplas, sets.
   - `6-erros.ipynb`: Tratamento de erros e exceções.
+  - `7-OOP.ipynb`: Introdução a programação orientada a objetos (POO) ou Object-oriented programming (OOP).
 
 - **`airflow/`**: Diretório com tópicos sobre Airflow:
   - `1-airflow_notes.ipynb`: Introdução ao Airflow e seus componentes.
