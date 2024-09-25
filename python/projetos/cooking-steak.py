@@ -4,10 +4,8 @@
 
 # | Temperatura (°C) | Ponto da Carne      |
 # |------------------|---------------------|
-# | 48 - 52          | Mal Passado (Rare)  |
-# | 53 - 57          | Ao Ponto Menos (Medium Rare) |
+# | 48 - 57          | Mal Passado (Rare)  |
 # | 58 - 62          | Ao Ponto (Medium)   |
-# | 63 - 67          | Passado (Medium Well)|
 # | 68 ou mais       | Bem Passado (Well Done) |
 
 # Regras:
@@ -20,3 +18,15 @@
 # A carne está ao ponto menos (Medium Rare).
 
 # Escreva o código abaixo:
+
+def meat_point(temperature):
+    if 48 < temperature <= 57:
+        print('Mal passado')
+    elif 58 < temperature <= 62:
+        print('Ao Ponto')
+    elif 68 < temperature:
+        print('Bem Passado')
+
+resposta = int(input('Temperatura da carne: '))
+
+meat_point(resposta)
