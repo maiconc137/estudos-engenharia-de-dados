@@ -11,4 +11,3 @@ task2 = BashOperator(task_id="tsk2", bash_command="exit 1", dag=dag)
 task3 = BashOperator(task_id="tsk3", bash_command="sleep 5", dag=dag, trigger_rule='all_failed')
 
 [task1, task2] >> task3
-
