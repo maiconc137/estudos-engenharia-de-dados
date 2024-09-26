@@ -20,6 +20,8 @@
 # Escreva o código abaixo:
 
 def meat_point(temperature):
+    if temperature <= 48:
+        print('Crua')
     if 48 < temperature <= 57:
         print('Mal passado')
     elif 58 < temperature <= 62:
