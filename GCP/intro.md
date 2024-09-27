@@ -39,3 +39,20 @@
 ---
 
 Essa tabela ilustra claramente as diferenças em quem é responsável por cada componente da arquitetura Cloud em cada modelo (On-Premise, IaaS, PaaS, SaaS). A responsabilidade do cliente diminui à medida que avançamos de On-Premise para SaaS, com o provedor de nuvem assumindo mais responsabilidade pelos componentes.
+
+### Tipos de Cloud: Cloud Privado, Cloud Pública e Soluções Híbridas
+
+1. **Cloud Privado**: 
+   - Infraestrutura dedicada exclusivamente para uma única organização. 
+   - Oferece maior controle e segurança, ideal para empresas com requisitos regulatórios específicos ou preocupações de segurança.
+   - Pode ser gerenciada internamente pela empresa ou por um provedor de serviços terceirizado, mas sempre de forma exclusiva.
+
+2. **Cloud Pública**:
+   - Infraestrutura disponibilizada por provedores terceirizados para múltiplos clientes, geralmente acessada pela internet.
+   - Mais econômica devido à escala e compartilhamento de recursos, com alta disponibilidade e fácil escalabilidade.
+   - Exemplos incluem Google Cloud, AWS e Azure. É ideal para startups e empresas que não têm grandes requisitos de segurança específicos.
+
+3. **Soluções Híbridas**:
+   - Combinação de cloud privada e pública, permitindo que dados e aplicações sejam compartilhados entre ambos.
+   - As empresas utilizam o cloud privado para dados sensíveis e o cloud público para workloads que exigem escalabilidade.
+   - Fornece flexibilidade e otimização de custos, permitindo uma combinação entre segurança e capacidade de escalonamento.
