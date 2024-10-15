@@ -138,3 +138,67 @@ No GCP, os diferentes modelos de serviço oferecem flexibilidade para atender à
 ---
 
 Esses serviços de rede oferecem soluções robustas e flexíveis para conectar, proteger e otimizar a infraestrutura de rede no Google Cloud.
+
+### Principais Opções de Armazenamento no Google Cloud:
+
+1. **Cloud Storage**:
+   - Armazenamento de objetos escalável e seguro que permite armazenar dados não estruturados, como imagens, vídeos, backups e arquivos. Oferece várias classes de armazenamento (Standard, Nearline, Coldline, e Archive) para atender diferentes necessidades de custo e acesso.
+   - **Uso**: Backup de dados, armazenamento de mídia, grandes volumes de dados não estruturados, e arquivos para aplicativos.
+
+2. **Persistent Disks**:
+   - Discos persistentes que oferecem armazenamento em bloco para instâncias de VMs no Google Compute Engine. São redimensionáveis e podem ser usados como discos de inicialização ou armazenamento adicional.
+   - **Uso**: Armazenamento de dados para VMs, persistência de dados em sistemas de arquivos e bancos de dados.
+
+3. **Filestore**:
+   - Serviço gerenciado de armazenamento de arquivos que oferece compatibilidade com NFS. Ideal para aplicativos que necessitam de armazenamento de arquivos compartilhado com baixa latência.
+   - **Uso**: Aplicações que necessitam de armazenamento compartilhado, como servidores de conteúdo e repositórios de mídia.
+
+4. **Cloud SQL**:
+   - Banco de dados gerenciado com suporte para MySQL, PostgreSQL e SQL Server. Gerencia backups automáticos, replicação, e escalabilidade de infraestrutura.
+   - **Uso**: Aplicações que precisam de um banco de dados relacional com alta disponibilidade e gerenciamento simplificado.
+
+5. **Cloud Spanner**:
+   - Banco de dados relacional distribuído e escalável que oferece consistência forte, alta disponibilidade global e transações ACID.
+   - **Uso**: Aplicações globais críticas que precisam de um banco de dados relacional distribuído e escalável com consistência forte.
+
+6. **Bigtable**:
+   - Banco de dados NoSQL de baixa latência, ideal para grandes volumes de dados, como séries temporais e machine learning.
+   - **Uso**: Armazenamento de séries temporais, grandes volumes de dados para machine learning e analytics.
+
+7. **Firestore**:
+   - Banco de dados NoSQL em tempo real, altamente escalável, facilitando o desenvolvimento de aplicativos web e mobile. Oferece sincronização automática entre clientes e servidores.
+   - **Uso**: Aplicações que precisam de sincronização de dados em tempo real, como aplicativos de chat e colaboração.
+
+---
+
+Essas opções de armazenamento no Google Cloud permitem armazenar, gerenciar e acessar diferentes tipos de dados, desde dados não estruturados até dados relacionais e NoSQL, com alta escalabilidade e segurança.
+
+### Principais Opções de Database Storage no Google Cloud:
+
+1. **Cloud SQL**:
+   - Banco de dados relacional gerenciado com suporte para MySQL, PostgreSQL e SQL Server. Cuida de replicação, backups automáticos, aplicação de patches e escalabilidade.
+   - **Uso**: Aplicações que precisam de bancos de dados relacionais com alta disponibilidade e gerenciamento simplificado.
+
+2. **Cloud Spanner**:
+   - Banco de dados relacional distribuído que combina consistência forte, transações ACID e alta disponibilidade global. Perfeito para grandes aplicações globais que exigem escalabilidade horizontal sem comprometer a consistência.
+   - **Uso**: Aplicações críticas e globais que precisam de um banco de dados relacional distribuído e consistente.
+
+3. **BigQuery**:
+   - Data warehouse gerenciado, altamente escalável, projetado para análises rápidas de grandes volumes de dados. Permite a execução de consultas SQL eficientes sem precisar gerenciar a infraestrutura.
+   - **Uso**: Processamento e análise de grandes volumes de dados para BI, analytics e machine learning.
+
+4. **Firestore (anteriormente Cloud Datastore)**:
+   - Banco de dados NoSQL de documentos, escalável e serverless, com suporte a sincronização em tempo real. Oferece transações ACID e é integrado ao Google Cloud e Firebase.
+   - **Uso**: Aplicações web e mobile que precisam de armazenamento NoSQL com sincronização em tempo real, como chat e colaboração.
+
+5. **Bigtable**:
+   - Banco de dados NoSQL, projetado para workloads de baixa latência e alta escalabilidade. Ideal para armazenar grandes volumes de dados, como séries temporais e dados de IoT.
+   - **Uso**: Processamento de grandes volumes de dados para aplicações de baixa latência, como machine learning e séries temporais.
+
+6. **MemoryStore**:
+   - Serviço gerenciado de Redis e Memcached para cache e aceleração de aplicativos e bancos de dados. Ideal para armazenar dados temporários na memória, permitindo acesso rápido.
+   - **Uso**: Armazenamento em cache para melhorar a performance de aplicativos e reduzir a carga sobre bancos de dados subjacentes.
+
+---
+
+Esses serviços de **Database Storage** no Google Cloud oferecem soluções que abrangem bancos de dados relacionais, NoSQL e data warehouses, oferecendo flexibilidade para uma ampla gama de workloads e necessidades de armazenamento de dados.
