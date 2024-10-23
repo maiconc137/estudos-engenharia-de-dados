@@ -154,3 +154,53 @@ A correta configuração de **projetos e contas** no GCP garante uma administra�
 ---
 
 Com uma estrutura bem planejada usando **organizações**, **pastas** e **projetos**, é possível administrar de forma eficiente os recursos do GCP. O uso de permissões herdadas e específicas garante flexibilidade e segurança no controle de acessos.
+
+# Hierarquia entre Projetos, Organizações, Pastas e Subpastas no GCP
+
+No **Google Cloud Platform (GCP)**, a hierarquia de recursos é essencial para gerenciar de forma eficaz o acesso, as políticas e o faturamento dos recursos em nuvem. A hierarquia é estruturada em **quatro níveis principais**:
+
+1. **Organização**  
+2. **Pastas**  
+3. **Projetos**  
+4. **Recursos**
+
+---
+
+## 1. Organização
+
+- **Nível mais alto** na hierarquia.
+- Representa a empresa ou entidade que está utilizando o GCP.
+- Permite aplicar políticas e permissões que se propagam para todos os recursos abaixo.
+- **Exemplo:** `minha-empresa.com`
+
+---
+
+## 2. Pastas
+
+- **Opcional**, mas útil para estruturar recursos de forma lógica.
+- Podem conter outras pastas ou projetos.
+- Facilitam a aplicação de políticas em grupos específicos de recursos.
+- **Exemplo:** `Departamento de TI`, `Equipe de Desenvolvimento`
+
+---
+
+## 3. Projetos
+
+- **Unidade principal de organização** para recursos.
+- Todos os recursos no GCP pertencem a um projeto.
+- Isolam recursos, políticas e permissões.
+- **Exemplo:** `projeto-site-web`, `projeto-app-mobile`
+
+---
+
+## 4. Recursos
+
+- **Entidades individuais** como VMs, bancos de dados, buckets de armazenamento, etc.
+- Herdam políticas e permissões dos níveis superiores.
+- **Exemplo:** Instância Compute Engine, Bucket Cloud Storage
+
+---
+
+## Visão Geral da Hierarquia
+
+Organização └── Pasta ├── Subpasta │ └── Projeto │ └── Recursos └── Projeto └── Recursos
