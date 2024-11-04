@@ -226,3 +226,33 @@ Para atribuir uma role a um usuário:
 gcloud projects add-iam-policy-binding [PROJECT_ID] \
     --member="user:[USER_EMAIL]" \
     --role="roles/[ROLE_NAME]"
+
+### Contas de Serviço no Google Cloud Platform (GCP)
+
+No GCP, **contas de serviço** são uma forma de identidade usada para autorizar aplicações e serviços a interagir com outros recursos na plataforma com segurança. Elas permitem que aplicações autenticadas façam chamadas à API e acessem recursos, sem a necessidade de usar credenciais de usuário. Além de segurança e controle de acesso, contas de serviço podem impactar o **Billing (faturamento)**, pois elas gerenciam o uso e as permissões sobre recursos que geram custos.
+
+#### Características das Contas de Serviço:
+- **Credenciais**: Cada conta de serviço possui credenciais específicas (geralmente em formato de chave JSON) para autenticar e autorizar ações.
+- **Roles e Permissões**: Atribuir roles específicas permite definir o que cada conta de serviço pode fazer. Por exemplo, uma conta de serviço com o role `BigQuery User` pode ler e escrever dados no BigQuery.
+- **Uso de IAM**: Contas de serviço são gerenciadas pelo Identity and Access Management (IAM), que permite controlá-las como qualquer outra identidade de usuário, com permissões detalhadas.
+
+#### Billing e Contas de Serviço:
+Toda ação executada por uma conta de serviço que consome recursos do GCP (como armazenamento, processamento de dados ou execução de VMs) gera **custos** associados ao projeto em que a conta está registrada. Portanto, é essencial gerenciar roles para limitar ações desnecessárias e evitar custos adicionais. Em muitos casos, é recomendável monitorar as atividades de contas de serviço que utilizam APIs que possuem custos variáveis para evitar cobranças inesperadas.
+
+#### Principais Tipos de Contas de Serviço:
+1. **Contas de Serviço do Usuário**: Criadas por um usuário para uma aplicação específica, permitindo controle total sobre permissões. Esse tipo é o mais comum.
+2. **Contas de Serviço Gerenciadas pelo Google**: Usadas internamente para operar serviços do GCP, como Compute Engine e App Engine. Essas contas geralmente têm permissões específicas de acordo com o serviço.
+3. **Contas de Serviço Padrão**: Criadas automaticamente quando certos recursos são implementados, como VMs no Compute Engine. Elas podem ter permissões pré-definidas e devem ser revisadas conforme necessário.
+
+#### Exemplo Prático: Configurando uma Conta de Serviço para BigQuery
+Imagine que você tem uma aplicação que precisa ler dados do BigQuery. Para evitar custos adicionais, você pode criar uma conta de serviço com permissões mínimas para essa tarefa:
+
+1. No **Console do GCP**, vá para **IAM & Admin > Service Accounts**.
+2. Clique em **Create Service Account** e defina um nome e ID.
+3. Atribua o role `BigQuery Data Viewer` para garantir que a conta possa apenas visualizar os dados.
+4. Gere uma chave JSON para a conta de serviço, se a aplicação precisar de autenticação fora do ambiente do GCP.
+
+Esse controle de permissões reduz os riscos de ações não intencionais que possam gerar custos adicionais e promove segurança.
+
+### Exemplo em Python
+O código a seguir demonstra como usar uma conta de serviço para acessar o BigQuery sem ultrapassar permissões de leitura.
