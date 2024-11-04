@@ -256,3 +256,14 @@ Esse controle de permissões reduz os riscos de ações não intencionais que po
 
 ### Exemplo em Python
 O código a seguir demonstra como usar uma conta de serviço para acessar o BigQuery sem ultrapassar permissões de leitura.
+
+### Alertas de Cobranças no Google Cloud Platform (GCP)
+
+Os alertas de cobranças no GCP ajudam a monitorar gastos e evitar surpresas na fatura. É possível configurar **alertas de orçamento** que notificam quando um limite de gastos definido é atingido. Estes alertas podem ser configurados pelo Console do GCP em **Billing > Budgets & alerts** e enviados por e-mail, ajudando a acompanhar os custos em tempo real e ajustá-los conforme necessário.
+
+**Passos rápidos para configurar:**
+1. Vá para **Billing > Budgets & alerts**.
+2. Defina um orçamento e os valores de alerta (ex.: 50%, 90%, 100% do orçamento).
+3. Ative as notificações por e-mail.
+
+Esses alertas são fundamentais para controlar o uso dos recursos e evitar gastos excessivos.
