@@ -204,3 +204,25 @@ No **Google Cloud Platform (GCP)**, a hierarquia de recursos é essencial para g
 ## Visão Geral da Hierarquia
 
 Organização └── Pasta ├── Subpasta │ └── Projeto │ └── Recursos └── Projeto └── Recursos
+
+### Roles e Permissões no Google Cloud Platform (GCP)
+
+No GCP, **roles** e **permissões** são componentes-chave para o gerenciamento de acesso e segurança de recursos. O controle de acesso é baseado em Identidade e Gerenciamento de Acesso (IAM), onde **permissões** definem ações específicas que uma entidade (como um usuário ou serviço) pode realizar em um recurso (como um bucket de armazenamento). As permissões são agrupadas em **roles** (papéis), que podem ser atribuídos a usuários, grupos ou contas de serviço.
+
+#### Tipos de Roles:
+1. **Primitive Roles**: Incluem "Owner", "Editor" e "Viewer" e concedem permissões gerais.
+2. **Predefined Roles**: São roles com permissões específicas para serviços, como `Storage Admin` ou `Compute Viewer`.
+3. **Custom Roles**: Criados para necessidades específicas, permitindo granularidade nas permissões atribuídas.
+
+#### Exemplos:
+- **Viewer**: Pode visualizar recursos mas não pode alterá-los.
+- **Editor**: Pode criar e modificar recursos, mas não tem controle total.
+- **Owner**: Tem controle total, incluindo a possibilidade de gerenciar permissões.
+
+Ao configurar roles e permissões, é recomendável aplicar o princípio do menor privilégio, garantindo que usuários ou serviços tenham apenas as permissões estritamente necessárias para desempenhar suas funções.
+
+Para atribuir uma role a um usuário:
+```bash
+gcloud projects add-iam-policy-binding [PROJECT_ID] \
+    --member="user:[USER_EMAIL]" \
+    --role="roles/[ROLE_NAME]"
