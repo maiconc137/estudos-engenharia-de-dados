@@ -221,12 +221,6 @@ No GCP, **roles** e **permissões** são componentes-chave para o gerenciamento 
 
 Ao configurar roles e permissões, é recomendável aplicar o princípio do menor privilégio, garantindo que usuários ou serviços tenham apenas as permissões estritamente necessárias para desempenhar suas funções.
 
-Para atribuir uma role a um usuário:
-```bash
-gcloud projects add-iam-policy-binding [PROJECT_ID] \
-    --member="user:[USER_EMAIL]" \
-    --role="roles/[ROLE_NAME]"
-
 ### Contas de Serviço no Google Cloud Platform (GCP)
 
 No GCP, **contas de serviço** são uma forma de identidade usada para autorizar aplicações e serviços a interagir com outros recursos na plataforma com segurança. Elas permitem que aplicações autenticadas façam chamadas à API e acessem recursos, sem a necessidade de usar credenciais de usuário. Além de segurança e controle de acesso, contas de serviço podem impactar o **Billing (faturamento)**, pois elas gerenciam o uso e as permissões sobre recursos que geram custos.
@@ -267,3 +261,42 @@ Os alertas de cobranças no GCP ajudam a monitorar gastos e evitar surpresas na 
 3. Ative as notificações por e-mail.
 
 Esses alertas são fundamentais para controlar o uso dos recursos e evitar gastos excessivos.
+
+### Cloud Functions no Google Cloud Platform (GCP)
+
+**Cloud Functions** é um serviço de computação serverless no GCP que permite executar código em resposta a eventos sem a necessidade de gerenciar infraestrutura. As **Functions** são ideais para tarefas de pequena escala que respondem a eventos, como processamento de arquivos, webhooks, integrações com APIs e manipulação de dados.
+
+#### Características Principais:
+- **Totalmente Gerenciado**: O GCP lida com o provisionamento, o escalonamento e a manutenção da infraestrutura.
+- **Trigger por Eventos**: As funções podem ser disparadas por eventos do GCP (como modificações em buckets do Cloud Storage, mensagens do Pub/Sub) ou chamadas HTTP.
+- **Escalonamento Automático**: Cloud Functions escalam automaticamente com base na demanda.
+
+#### Exemplo de Uso: Integrar Cloud Functions com uma API
+É comum usar Cloud Functions para construir APIs, processar dados em tempo real ou responder a eventos específicos, como uploads de arquivos ou mensagens em filas.
+
+#### Como Criar uma Cloud Function:
+1. No **Console do GCP**, vá para **Cloud Functions** e clique em **Create Function**.
+2. Escolha um gatilho (HTTP ou baseado em eventos).
+3. Escreva seu código ou faça upload.
+4. Configure permissões e clique em **Deploy**.
+
+Cloud Functions são cobradas por tempo de execução e recursos utilizados, o que torna importante o controle sobre a quantidade de chamadas e o tempo de execução para otimizar custos.
+
+### Exemplo em Python:
+Abaixo, uma função simples em Python que responde a uma requisição HTTP:
+
+### API Monitoring no Google Cloud Platform (GCP)
+
+O **API Monitoring** no GCP permite acompanhar o desempenho, disponibilidade e integridade das APIs. Utilizando o **API Gateway** e o **Cloud Monitoring**, é possível monitorar métricas-chave, detectar erros e definir alertas para garantir que as APIs estejam funcionando conforme o esperado.
+
+#### Recursos Principais:
+- **Métricas e Logs**: Cloud Monitoring oferece métricas de latência, taxa de erros e uso de recursos.
+- **Alertas Personalizáveis**: É possível configurar alertas para situações como alta latência ou taxas de erro elevadas, recebendo notificações por e-mail ou outras integrações.
+- **Visualização**: Painéis no Console do GCP facilitam a análise em tempo real e o histórico de desempenho da API.
+
+#### Exemplo de Configuração de Alerta para APIs:
+1. Acesse **Monitoring > Alerting** no Console do GCP.
+2. Crie uma nova política de alerta e escolha as métricas da API (ex.: taxa de erros).
+3. Configure as notificações e salve.
+
+API Monitoring é essencial para manter a confiabilidade e performance das APIs em produção.
