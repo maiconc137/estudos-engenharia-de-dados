@@ -12,15 +12,28 @@ with DAG('branchtest', description="branchtest",
     def gera_numero_aleatorio():
         return random.randint(1, 100)
 
+    gera_numero_aleatorio = PythonOperator(
+        task_id = 'gera_numero_aleatorio',
+        python_callable=gera_numero_aleatorio
+    )
+ 
     def avalia_numero_aleatorio(**agrs):
+        number = agrs['task_instance'].xcom_pull(task_ids='gera_numero_aleatorio')
+        if number % 2 ==0:
+            return 'par_task'
+        else:
+            return 'impar_task'
         
 
-    task1 = PythonOperator(task_id="gera_numero_aleatorio_task", python_callable="gera_numero_aleatorio")
-    task2 = BashOperator(task_id="tsk2", bash_command="sleep 1")
-    task3 = BashOperator(task_id="tsk3", bash_command="sleep 1")
-    task4 = BashOperator(task_id="tsk4", bash_command="sleep 1")
-    task5 = BashOperator(task_id="tsk5", bash_command="sleep 1")
-    taskdummy = DummyOperator(task_id="taskdummy")
+    branch_task = BranchPythonOperator(
+        task_id = 'branch_task',
+        python_callable = avalia_numero_aleatorio,
+        provide_context = True
+    )
 
+    par_task = BashOperator(task_id="par_task", bash_command='echo "Número Par"')
+    impar_task = BashOperator(task_id="impar_task", bash_command='echo "Número Impar"')
 
-    [task1, task2, task3] >> taskdummy >> [task4, task5]
+    gera_numero_aleatorio >> branch_task
+    branch_task >> par_task
+    branch_task >> impar_task
